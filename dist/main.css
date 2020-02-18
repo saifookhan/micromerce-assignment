@@ -1,7 +1,16 @@
 body {
   font: 100% Helvetica, sans-serif;
-  color: #f234; }
+  color: #ff001544; }
 
 .logo {
-  width: 240px; }
+  width: 100%; }
+
+.navbar {
+  background-color: #333333;
+  height: 100px;
+  margin-bottom: 0px; }
+
+.bannerPhoto {
+  width: 100%;
+  z-index: 0; }
 
