@@ -7,6 +7,32 @@ const pug = {
   test: /\.pug$/,
   use: ["html-loader?attrs=false", "pug-html-loader"]
 };
+const scss = {
+  test: /\.(scss)$/,
+  use: [
+    {
+      // Adds CSS to the DOM by injecting a `<style>` tag
+      loader: "style-loader"
+    },
+    {
+      // Interprets `@import` and `url()` like `import/require()` and will resolve them
+      loader: "css-loader"
+    },
+    {
+      // Loader for webpack to process CSS with PostCSS
+      loader: "postcss-loader",
+      options: {
+        plugins: function() {
+          return [require("autoprefixer")];
+        }
+      }
+    },
+    {
+      // Loads a SASS/SCSS file and compiles it to CSS
+      loader: "sass-loader"
+    }
+  ]
+};
 
 const config = {
   entry: "./src/app.js",
@@ -15,7 +41,7 @@ const config = {
     filename: "[name].bundle.js"
   },
   module: {
-    rules: [pug]
+    rules: [pug, scss]
   },
   plugins: [
     new HtmlWebpackPlugin({
