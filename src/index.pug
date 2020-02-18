@@ -1,5 +1,16 @@
 //- index.pug
 extends layout
+
+block header
+  p I am a header
+  div.container
+    nav.navbar.fixed-top
+      div.container-fluid
+        div.navbar-header
+          a.navbar-brand(href='#') Project name
+            img.logo(src="./assets/img/logo.svg")
+            img(src="./assets/img/bg-resized.jpg")
+	
 block content
   p Testing
   p.text-right Right aligned text on all viewport sizes.

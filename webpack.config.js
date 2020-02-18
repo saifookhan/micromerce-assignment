@@ -2,36 +2,32 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+// const js = {
+//   test: /\.js$/,
+//   exclude: /node_modules/,
+//   use: {
+//     loader: "babel-loader"
+//   }
+// };
 const pug = {
   test: /\.pug$/,
   use: ["html-loader?attrs=false", "pug-html-loader"]
 };
 const scss = {
-  test: /\.(scss)$/,
+  test: /\.sass$/,
   use: [
-    {
-      // Adds CSS to the DOM by injecting a `<style>` tag
-      loader: "style-loader"
-    },
-    {
-      // Interprets `@import` and `url()` like `import/require()` and will resolve them
-      loader: "css-loader"
-    },
-    {
-      // Loader for webpack to process CSS with PostCSS
-      loader: "postcss-loader",
-      options: {
-        plugins: function() {
-          return [require("autoprefixer")];
-        }
-      }
-    },
-    {
-      // Loads a SASS/SCSS file and compiles it to CSS
-      loader: "sass-loader"
-    }
+    MiniCssExtractPlugin.loader,
+    // "style-loader", // style nodes from js strings
+    "css-loader",
+    "sass-loader"
   ]
+};
+const img = {
+  test: /\.(png|svg|jp(e*)g|gif)$/,
+  use: ["file-loader", "url-loader"]
 };
 
 const config = {
@@ -41,13 +37,25 @@ const config = {
     filename: "[name].bundle.js"
   },
   module: {
-    rules: [pug, scss]
+    rules: [pug, scss, img]
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "src/index.pug",
       inject: false
+    }),
+    new CopyPlugin([
+      {
+        from: path.resolve(__dirname, "src/assets/img"),
+        to: path.resolve(__dirname, "dist/assets/img")
+      }
+    ]),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name].css",
+      chunkFilename: "[id].css"
     })
   ]
 };
