@@ -7,4 +7,4 @@ setInterval(function() {
     .fadeIn(1500)
     .end()
     .appendTo("#slider");
-}, 6000);
+}, 8000);

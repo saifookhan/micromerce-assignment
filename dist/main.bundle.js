@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/styles.sass */ \"./src/styles/styles.sass\");\n/* harmony import */ var _styles_styles_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_sass__WEBPACK_IMPORTED_MODULE_0__);\n\nsetInterval(function () {\n  $(\"#slider > div:first\").fadeOut(1500).next().fadeIn(1500).end().appendTo(\"#slider\");\n}, 6000);\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/styles.sass */ \"./src/styles/styles.sass\");\n/* harmony import */ var _styles_styles_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_sass__WEBPACK_IMPORTED_MODULE_0__);\n\nsetInterval(function () {\n  $(\"#slider > div:first\").fadeOut(1500).next().fadeIn(1500).end().appendTo(\"#slider\");\n}, 8000);\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
