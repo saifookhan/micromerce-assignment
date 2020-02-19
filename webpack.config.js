@@ -5,13 +5,17 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-// const js = {
-//   test: /\.js$/,
-//   exclude: /node_modules/,
-//   use: {
-//     loader: "babel-loader"
-//   }
-// };
+const js = {
+  test: /\.js$/,
+  exclude: /(node_modules)/,
+  use: {
+    loader: "babel-loader",
+    options: {
+      presets: ["@babel/preset-env"]
+    }
+  }
+};
+
 const pug = {
   test: /\.pug$/,
   use: ["html-loader?attrs=false", "pug-html-loader"]
@@ -27,7 +31,17 @@ const scss = {
 };
 const img = {
   test: /\.(png|svg|jp(e*)g|gif)$/,
-  use: ["url-loader"]
+  use: [
+    {
+      loader: "file-loader",
+
+      // In options we can set different things like format
+      // and directory to save
+      options: {
+        outputPath: "images"
+      }
+    }
+  ]
 };
 
 const config = {
@@ -37,7 +51,7 @@ const config = {
     filename: "[name].bundle.js"
   },
   module: {
-    rules: [pug, scss, img]
+    rules: [js, pug, scss, img]
   },
   plugins: [
     new HtmlWebpackPlugin({
