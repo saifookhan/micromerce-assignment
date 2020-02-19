@@ -27,7 +27,7 @@ const scss = {
 };
 const img = {
   test: /\.(png|svg|jp(e*)g|gif)$/,
-  use: ["file-loader", "url-loader"]
+  use: ["url-loader"]
 };
 
 const config = {
