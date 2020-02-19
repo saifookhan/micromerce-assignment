@@ -61,8 +61,8 @@ const config = {
     }),
     new CopyPlugin([
       {
-        from: path.resolve(__dirname, "src/assets/img"),
-        to: path.resolve(__dirname, "dist/assets/img")
+        from: path.resolve(__dirname, "src/assets/img/logo.svg"),
+        to: path.resolve(__dirname, "dist/assets/img/logo.svg")
       }
     ]),
     new MiniCssExtractPlugin({

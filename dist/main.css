@@ -19,7 +19,8 @@ body {
     min-height: 700px;
     z-index: 0;
     background-size: cover;
-    transform: translate(0px, -200px); }
+    transform: translate(0px, -200px);
+    position: absolute; }
 
 .photo1 {
   background-image: url(images/fb98a0fe3e83b487b722931ed1c2849d.jpg); }

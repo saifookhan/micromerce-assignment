@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/styles.sass */ \"./src/styles/styles.sass\");\n/* harmony import */ var _styles_styles_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_sass__WEBPACK_IMPORTED_MODULE_0__);\n // document.getElementById(\"photo\").style.backgroundImage =\n//   \"url(http://media.nu.nl/m/m1fz6dwa6h3w.jpg)\";\n\nconsole.log(\"hi\");\nsetInterval(function () {\n  $(\"#slider > div:first\").fadeOut(1000).fadeIn(1000).next() //.fadeIn(1000)\n  .end().appendTo(\"#slider\");\n}, 3000);\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/styles.sass */ \"./src/styles/styles.sass\");\n/* harmony import */ var _styles_styles_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_sass__WEBPACK_IMPORTED_MODULE_0__);\n\nsetInterval(function () {\n  $(\"#slider > div:first\").fadeOut(1500).next().fadeIn(1500).end().appendTo(\"#slider\");\n}, 6000);\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
