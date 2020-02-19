@@ -1,9 +1,8 @@
-$font-stack:    Helvetica, sans-serif
-$primary-color: #ff001544
+$font-stack:    Helvetica-Neue, sans-serif
+$bg-color: #333333
 
 body
   font: 100% $font-stack
-  color: $primary-color
 
 .logo
   width: 100%
@@ -15,12 +14,25 @@ body
   z-index: 1
 
 .slider
-
+  max-height: 500px
   .bannerPhoto
     width: 100%
-    height: 700px
-
+    min-height: 700px
     z-index: 0
     background-size: cover
     background-image: url(../assets/img/bg-resized.jpg)
     transform: translate(0px, -200px)
+
+.text-holder
+  background-color: $bg-color
+  color: white
+  padding: 32px 0px
+
+.heading
+  font-size: 32px
+
+.para
+  font-size: 20px
+
+.txt
+  margin: 16px 0px
